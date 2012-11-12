@@ -134,42 +134,15 @@ module Knodes
     #here comes the good stuff.  modules separated by Knodes resources, with methods for each api call
     module Customers
     	def customer
-        
-        # http://developer.knod.es/docs/customers/
-
-        # PARAMETERS
-        # Name         Description               Required?
-        # USTOMER_ID  ID of customer to view.   Yes
     		response = get("customers", creds)
    		end
 
-      def connect(options={})
-
-        # http://developer.knod.es/docs/customers/connect
-
-        # PARAMETERS
-        # Name          Description                 Required?
-        # CUSTOMER_ID   ID of customer to view.     Yes
-        # network       Network being connected.    Yes
-        # id            App identifier on network.  Yes
-        # secret        App secret on network.      No
-
-        #merge customer credentials, initial values will override provided values.
-        options = options.merge(creds)
-        response = post("customers/#{options[:customer_id]}/connect", options)
+      def customer_connect(options={})
+        response = post("customers/#{options[:customer_id]}/connect", options = options.merge(creds))
       end
 
-      def disconnect(options={})
-
-        # http://developer.knod.es/docs/customers/disconnect
-
-        # PARAMETERS
-        # Name          Description                 Required?
-        # CUSTOMER_ID   ID of customer to view.     Yes
-        # network       Network being disconnected. Yes
-
-        options = options.merge(creds)
-        response = post("customers/#{options[:customer_id]}/disconnect", options)
+      def customer_disconnect(options={})
+        response = post("customers/#{options[:customer_id]}/disconnect", options = options.merge(creds))
       end
     end
 
