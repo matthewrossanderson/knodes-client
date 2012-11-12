@@ -249,6 +249,43 @@ module Knodes
         response = get("people/#{options[:person_id]}/documents", options.merge(creds))
       end
     end
+
+    module Documents
+      def document(options={})
+        response = get("documents/#{options[:doc_id]}", options.merge(creds))
+      end
+
+      def documents_search(options={})
+        response = get("documents/search", options.merge(creds))
+      end
+
+      def document_people(options={})
+        response = get("documents/#{options[:doc_id]}/people", options.merge(creds))
+      end
+
+      def document_locations(options={})
+        response = get("documents/#{options[:doc_id]}/locations", options.merge(creds))
+      end
+    end
+
+    module Locations
+      def location(options={})
+        response = get("locations/#{options[:location_id]}", options.merge(creds))
+      end
+
+      def locations_search(options={})
+        response = get("locations/search", options.merge(creds))
+      end
+
+      def location_people(options={})
+        response = get("locations/#{options[:location_id]}/people", options.merge(creds))
+      end
+
+      def location_documents(options={})
+        response = get("locations/#{options[:location_id]}/documents", options.merge(creds))
+      end
+    end
+
       end
     end
 
