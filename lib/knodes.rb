@@ -14,8 +14,9 @@ module Knodes
       }
 
   		Faraday::Connection.new(options) do |connection|
-        connection.use Faraday::Request::UrlEncoded
         connection.use FaradayMiddleware::Mashify unless raw
+        connection.use Faraday::Request::UrlEncoded
+        connection.use Faraday::Response::RaiseError
         unless raw
           case format.to_s.downcase
           when 'json' then connection.use Faraday::Response::ParseJson
@@ -30,23 +31,23 @@ module Knodes
 
   module Request
     # Perform an HTTP GET request
-    def get(path, options={}, raw=false, unformatted=false)
-      request(:get, path, options, raw, unformatted)
+    def get(path, options={}, raw=false, unformatted=false, debug=false)
+      request(:get, path, options, raw, unformatted, debug)
     end
 
     # Perform an HTTP POST request
-    def post(path, options={}, raw=false, unformatted=false)
-      request(:post, path, options, raw, unformatted)
+    def post(path, options={}, raw=false, unformatted=false, debug=false)
+      request(:post, path, options, raw, unformatted, debug)
     end
 
     # Perform an HTTP PUT request
-    def put(path, options={}, raw=false, unformatted=false)
-      request(:put, path, options, raw, unformatted)
+    def put(path, options={}, raw=false, unformatted=false, debug=false)
+      request(:put, path, options, raw, unformatted, debug)
     end
 
     # Perform an HTTP DELETE request
-    def delete(path, options={}, raw=false, unformatted=false)
-      request(:delete, path, options, raw, unformatted)
+    def delete(path, options={}, raw=false, unformatted=false, debug=false)
+      request(:delete, path, options, raw, unformatted, debug)
     end
 
     private
@@ -63,7 +64,7 @@ module Knodes
           request.body = options unless options.empty?
         end
 
-        puts request if debug
+        puts request.inspect if debug
       end
       raw ? response : response.body
     end
