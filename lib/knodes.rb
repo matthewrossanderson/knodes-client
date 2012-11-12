@@ -318,11 +318,15 @@ module Knodes
     include Request
     include Customers
     include Users
+    include People
+    include Documents
+    include Locations
+    include Companies
+    include Schools
   end 	
 
   #Knodes module methods
-  #extend Configuration
-
+  
   # Alias for Knodes::Client.new
   def self.client(options={})
     Knodes::Client.new(options)
