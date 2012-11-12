@@ -175,49 +175,38 @@ module Knodes
 
     module Users
   		def user(options={})
-
-        # PARAMETERS
-        # Name      Description
-        # USER_ID   ID of user if viewing or updating a particular user. 
-        # status    If querying list of users, can specify status to limit to user's in the specified status.  
-        # num       If querying list of users, can specify the number to return. 
-        # page      If querying list of users, specify the page to return (1-based).
-
-        options = options.merge(creds)
-  			response = get("users/#{options[:user_id]}", options)
+  			response = get("users/#{options[:user_id]}", options.merge(creds))
     	end
 
-      def connect(options={})
-        options = options.merge(creds)
-        response = post("users/connect", options)
+      def user_connect(options={})
+        response = post("users/connect", options.merge(creds))
       end
 
-      def disconnect(options={})
-        options = options.merge(creds)
-        response = post("users/disconnect", options)
+      def user_disconnect(options={})
+        response = post("users/disconnect", options.merge(creds))
       end
 
       def notify_active(options={})
-        options = options.merge(creds)
-        response = post("users/notify_active", options)
+        response = post("users/notify_active", options.merge(creds))
       end
 
       def notify_inactive(options={})
-        options = options.merge(creds)
         #do a raw request/response (don't parse), as this method only returns an http status
-        response = post("users/notify_inactive", options, true)
+        response = post("users/notify_inactive", options.merge(creds), true)
         status = response.env[:status]
       end
 
       def ready(options={})
-        options = options.merge(creds)
-        response = get("users/#{options[:user_id]}/ready", options, true)
+        response = get("users/#{options[:user_id]}/ready", options.merge(creds), true)
         body = response.env[:body]
       end
 
       def do_index(options={})
-        options = options.merge(creds)
-        response = post("users/#{options[:user_id]}/do_index", options)
+        response = post("users/#{options[:user_id]}/do_index", options.merge(creds), true)
+        status = response.env[:status]
+      end
+    end
+
     module People
       def person(options={})
         response = get("people/#{options[:person_id]}", options.merge(creds))
