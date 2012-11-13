@@ -1,26 +1,29 @@
-# Ruby Project template with RSpec, Cucumber and Guard
+# Knodes Ruby Client Library
 
-This is a template that you can use to bootstrap a new ruby project. It
-contains hello-world features and specs adapted from the 
-[http://pragprog.com/book/achbd/the-rspec-book](RSpec Book).
+This is a client written for the knod.es API
 
-## Getting started
+## Getting started using the library
 
-1. If using RVM, edit the .rvmrc file to suit your project requirements.
-2. Install bundler: `gem install bundler`
-3. Install guard `gem install guard`
-4. Install dependencies: `bundler install`
-5. Launch guard: `guard start`
+1. Install the gem
+2. Include it in your project.
+3. Configure it
+	With a block:
+		Knodes.configure do |config|
+			config.customer_id = "foo"
+			config.customer_secret = "bar"
+		end
+	With arguments:
+		c = Knodes.client(:customer_id=>"foo", :customer_secret=>"bar")
+4. Make some calls
+	Knodes.customer
+	Knodes.user(:user_id=>"baz")
+5. Improve the library
+	I've implemented all of the calls in the documentation for knodes, but as this is the first proper api client I've written, I welcome any and all feedback.  Submit pull requests for any code changes, thanks!
 
-Guard will run rspec and cucumber against some "hello world" specs and
-features that will verify that these are tools are correctly
-installed. After this runs, you can remove the hello-world spec and
-features.
 
-Guard will also continuously watch the Gemfile and will re-run bundler
-if it changes. 
+## Knodes Documentation
+http://developer.knod.es
 
-You should start developing your classes and modules in the lib directory
-and any scripts or other excutable artefacts in the bin directory.
+		
 
-Good luck!
+
