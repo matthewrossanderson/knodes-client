@@ -85,13 +85,16 @@ module Knodes
         connection.use FaradayMiddleware::Mashify unless raw
         connection.use Faraday::Request::UrlEncoded
         connection.use Faraday::Response::RaiseError
+        connection.request :url_encoded
+        connection.response :mashify unless raw
+        
         unless raw
           case format.to_s.downcase
-          when 'json' then connection.use Faraday::Response::ParseJson
+          when 'json' 
+            connection.response :json, content_type: 'application/json'
           end
         end
-        #Todo: Implement HTTP Exceptions
-        #connection.use FaradayMiddleware::RaiseHttpException
+        
         connection.use FaradayMiddleware::KnodesErrors
         connection.adapter(adapter)
   		end
@@ -164,6 +167,7 @@ module Knodes
         end
 
         puts request.inspect if debug
+        puts response.inspect if debug
       end
       raw ? response : response.body
     end
