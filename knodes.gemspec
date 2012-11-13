@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/knodes/version', __FILE__)
+require File.expand_path('../lib/version', __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "knodes"
@@ -25,6 +25,8 @@ There's always money in the banana stand.
 eos
 
   s.add_development_dependency "rspec", "~>2.5.0"
+  s.add_runtime_dependency "faraday"
+  s.add_runtime_dependency "faraday_middleware"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
