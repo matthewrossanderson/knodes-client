@@ -82,9 +82,6 @@ module Knodes
       }
 
   		Faraday::Connection.new(options) do |connection|
-        connection.use FaradayMiddleware::Mashify unless raw
-        connection.use Faraday::Request::UrlEncoded
-        connection.use Faraday::Response::RaiseError
         connection.request :url_encoded
         connection.response :mashify unless raw
         
@@ -166,7 +163,6 @@ module Knodes
           request.body = options unless options.empty?
         end
 
-        puts request.inspect if debug
         puts response.inspect if debug
       end
       raw ? response : response.body
