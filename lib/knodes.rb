@@ -92,10 +92,41 @@ module Knodes
         end
         #Todo: Implement HTTP Exceptions
         #connection.use FaradayMiddleware::RaiseHttpException
+        connection.use FaradayMiddleware::KnodesErrors
         connection.adapter(adapter)
   		end
   	end
   end
+
+  module FaradayMiddleware
+    class KnodesErrors < Faraday::Middleware
+      def call(env)
+        @app.call(env).on_complete do |response|
+          case response[:status].to_i
+            when 400
+              raise Knodes::BadRequest, response[:body]
+              #puts "#{finished_env[:body] if finished_env[:body]}"
+            when 404
+              raise Knodes::NotFound, response[:body]
+              #puts "#{finished_env if finished_env[:body]}"
+          end
+        end
+      end
+      def initialize(app)
+          super app
+          @parser = nil
+      end
+    end
+  end
+
+  # Custom error class for rescuing from all Knodes errors
+  class Error < StandardError; end
+
+  # Raised when Knodes returns the HTTP status code 400
+  class BadRequest < Error; end
+
+  # Raised when Knodes returns the HTTP status code 404
+  class NotFound < Error; end
 
   module Request
     # Perform an HTTP GET request
