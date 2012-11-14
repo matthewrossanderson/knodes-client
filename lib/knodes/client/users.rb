@@ -13,6 +13,10 @@ module Knodes
         response = post("users/disconnect", options.merge(creds))
       end
 
+      def user_update(options={})
+        response = post("users/#{options[:user_id]}", options.merge(creds))
+      end
+
       def notify_active(options={})
         response = post("users/notify_active", options.merge(creds))
       end
