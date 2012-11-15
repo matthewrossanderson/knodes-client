@@ -14,15 +14,7 @@ module Knodes
   		Faraday::Connection.new(options) do |connection|
         connection.request :url_encoded
         connection.response :mashify unless raw
-        
-        #todo clean this up
-        unless raw
-          case format.to_s.downcase
-          when 'json' 
-            connection.response :json, content_type: 'application/json'
-          end
-        end
-
+        connection.response :json, content_type: 'application/json' unless raw  
         connection.use FaradayMiddleware::KnodesErrors
         connection.adapter(adapter)
   		end
