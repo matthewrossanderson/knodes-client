@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email       = ["matthewrossanderson@gmail.com"]
   s.homepage    = "http://developer.knod.es/"
   s.summary     = %q{A ruby client library for the Knodes API}
-  s.description = %q{See API documentation at http://developer.knod.es/}
+  s.description = %q{A ruby client library for the Knodes API. See API documentation at http://developer.knod.es/}
   s.license     = "Apache 2.0"
   s.post_install_message =<<eos
 ********************************************************************************
