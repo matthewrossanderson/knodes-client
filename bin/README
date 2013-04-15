@@ -1,3 +1,0 @@
-Use this directory for any scripts that your app creates or needs. If this
-was a Ruby Gem. app/bin will be where the public scripts will end up and will
-normally be copied from here to the /usr/local/bin or other suitable place.
