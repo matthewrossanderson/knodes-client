@@ -11,8 +11,8 @@ Gem::Specification.new do |s|
   s.homepage    = "http://developers.kno.des/"
   s.summary     = %q{A ruby client library for the Knodes API}
   s.description = %q{See API documentation at http://developers.kno.des/}
-
-   s.post_install_message =<<eos
+  s.license     = "Apache 2.0"
+  s.post_install_message =<<eos
 ********************************************************************************
 
 Thanks for installing the Knodes client library!
