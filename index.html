@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Knodes Client Library by matthewrossanderson</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Knodes Client Library</h1>
+        <h2>A ruby client library for the Knodes API.</h2>
+        <a href="https://github.com/matthewrossanderson/knodes-client" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>Knodes Ruby Client Library</h1>
+
+<p>A ruby client library for the Knodes API<br>
+See full API documentation at <a href="http://developer.kno.des/">http://developer.kno.des/</a></p>
+
+<h2>Usage</h2>
+
+<h3>Installation</h3>
+
+<p>Install the gem:<br><code>gem install knodes-client</code><br>
+or, add it to your Gemfile:<br><code>gem 'knodes-client'</code><br><code>bundle install</code></p>
+
+<h3>Configuration</h3>
+
+<div class="highlight"><pre><span class="no">Knodes</span><span class="o">.</span><span class="n">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span> 
+<span class="n">config</span><span class="o">.</span><span class="n">customer_id</span> <span class="o">=</span> <span class="s2">"foo"</span>
+<span class="n">config</span><span class="o">.</span><span class="n">customer_secret</span> <span class="o">=</span> <span class="s2">"bar"</span>
+<span class="k">end</span>
+</pre></div>
+
+<h3>Examples</h3>
+
+<p>Get the customer details<br><code>response = Knodes.customer</code></p>
+
+<p>Search for a person<br><code>response = Knodes.people_search(:user_id=&gt;user_id, :person_id=&gt;"self", :q=&gt;"Joe Schmoe")</code></p>
+
+<p>Get a person's details<br><code>response = Knodes.person(:user_id=&gt;user_id, :person_id=&gt;person_id)</code></p>
+
+<p>Search for a location<br><code>response = Knodes.locations_search(:user_id=&gt;user_id, :q=&gt;"New York")</code></p>
+
+<h2>Motivation</h2>
+
+<p>Discovered Knodes at the 2012 TechCrunch Hackathon, won the API prize for the YourQ project.  After changing the name to Que.io, we discovered that we needed a better client library, so I built it.  Gained inspiration from the client libraries for Podio and Instagram.</p>
+
+<h2>Knodes API Reference</h2>
+
+<p>View the getting started guide here:<br><a href="http://developer.knod.es/getting_started">http://developer.knod.es/getting_started</a></p>
+
+<p>View the API docs here:<br><a href="http://developer.knod.es/docs">http://developer.knod.es/docs</a></p>
+
+<h2>Tests</h2>
+
+<p>The tests rely on sample data from your social networks.
+Sign up for an account here:
+<a href="https://api.knod.es/portal/signup">https://api.knod.es/portal/signup</a></p>
+
+<p>Then, use the test harness to get your customer data. From there you can use this client to get the rest of the sample data.<br>
+Put your sample data into .env (sample file provided)<br>
+Then, to run the tests, you can use Guard for autotesting, or just vanilla Rspec:</p>
+
+<p><code>bundle exec guard</code></p>
+
+<h2>Contributors</h2>
+
+<p>If you discover a bug or want to contribute extra functionality:</p>
+
+<ol>
+<li>Fork it.</li>
+<li>Create a branch (<code>git checkout -b feature_or_bug_branch</code>)</li>
+<li>Commit your changes (<code>git commit -am "Added feature, fixed bug"</code>)</li>
+<li>Push to the branch (<code>git push origin feature_or_bug_branch</code>)</li>
+<li>Open a Pull Request</li>
+<li>...</li>
+<li>Profit</li>
+</ol><h2>License</h2>
+
+<p>This client library is released under the Apache license, Version 2.0
+<a href="http://www.apache.org/licenses/LICENSE-2.0.html">http://www.apache.org/licenses/LICENSE-2.0.html</a>  </p>
+
+<p>Knodes and all other trademarks are © 2013 SnapGoods, Inc. All Rights Reserved.<br><a href="http://knod.es/content/tos.pdf">http://knod.es/content/tos.pdf</a><br><a href="http://knod.es/content/customer_agreement.pdf">http://knod.es/content/customer_agreement.pdf</a></p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/matthewrossanderson/knodes-client/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/matthewrossanderson/knodes-client/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/matthewrossanderson/knodes-client"></a> is maintained by <a href="https://github.com/matthewrossanderson">matthewrossanderson</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
