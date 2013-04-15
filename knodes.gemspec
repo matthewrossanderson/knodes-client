@@ -8,16 +8,16 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Matt Anderson"]
   s.email       = ["matthewrossanderson@gmail.com"]
-  s.homepage    = "http://developer.kno.des/"
+  s.homepage    = "http://developer.knod.es/"
   s.summary     = %q{A ruby client library for the Knodes API}
-  s.description = %q{See API documentation at http://developer.kno.des/}
+  s.description = %q{See API documentation at http://developer.knod.es/}
   s.license     = "Apache 2.0"
   s.post_install_message =<<eos
 ********************************************************************************
 
 Thanks for installing the Knodes client library!
 
-See API documentation at http://developers.kno.des/
+See API documentation at http://developer.knod.es/
 
 There's always money in the banana stand.
 
