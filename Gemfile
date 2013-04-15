@@ -16,5 +16,6 @@ end
 group :development, :test do
   gem 'cucumber'
   gem 'rspec'
+  gem 'dotenv'
 end
 
