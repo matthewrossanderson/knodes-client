@@ -14,10 +14,12 @@ or, add it to your Gemfile:
 ```bundle install```
 
 ###Configuration
-```Knodes.configure do |config| 
+```ruby
+Knodes.configure do |config| 
 config.customer_id = "foo"
 config.customer_secret = "bar"
-end```
+end
+```
 
 ###Examples
 
@@ -28,7 +30,7 @@ Search for a person
 ```response = Knodes.people_search(:user_id=>user_id, :person_id=>"self", :q=>"Joe Schmoe")```
 
 Get a person's details  
-```response = Knodes.person(:user_id=>user_id, :person_id=>person_id)``
+```response = Knodes.person(:user_id=>user_id, :person_id=>person_id)```
 
 Search for a location  
 ```response = Knodes.locations_search(:user_id=>user_id, :q=>"New York")```
