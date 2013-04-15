@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Knodes::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Matt Anderson"]
-  s.email       = ["matt@blinkapplications.com"]
+  s.email       = ["matthewrossanderson@gmail.com"]
   s.homepage    = "http://developers.kno.des/"
   s.summary     = %q{A ruby client library for the Knodes API}
   s.description = %q{See API documentation at http://developers.kno.des/}
@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
    s.post_install_message =<<eos
 ********************************************************************************
 
-Thanks for installing Knodes!
+Thanks for installing the Knodes client library!
 
 See API documentation at http://developers.kno.des/
 
