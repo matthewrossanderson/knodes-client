@@ -1,7 +1,7 @@
 #Knodes Ruby Client Library
 
 A ruby client library for the Knodes API  
-See full API documentation at http://developers.kno.des/
+See full API documentation at http://developer.kno.des/
 
 ## Usage
 
