@@ -8,9 +8,9 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Matt Anderson"]
   s.email       = ["matthewrossanderson@gmail.com"]
-  s.homepage    = "http://developers.kno.des/"
+  s.homepage    = "http://developer.kno.des/"
   s.summary     = %q{A ruby client library for the Knodes API}
-  s.description = %q{See API documentation at http://developers.kno.des/}
+  s.description = %q{See API documentation at http://developer.kno.des/}
   s.license     = "Apache 2.0"
   s.post_install_message =<<eos
 ********************************************************************************
