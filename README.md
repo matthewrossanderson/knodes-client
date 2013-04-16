@@ -1,17 +1,23 @@
 #Knodes Ruby Client Library
 
 A ruby client library for the Knodes API  
-See full API documentation at http://developer.kno.des/
+See full API documentation at http://developer.knod.es/
 
 ## Usage
 
 ### Installation
 
 Install the gem:  
-```gem install knodes-client```  
+```ruby
+gem install knodes-client
+```  
+
 or, add it to your Gemfile:  
-```gem 'knodes-client'```  
-```bundle install```
+
+```ruby
+gem 'knodes-client'    
+bundle install
+```
 
 ###Configuration
 ```ruby
@@ -24,16 +30,24 @@ end
 ###Examples
 
 Get the customer details  
-```response = Knodes.customer```
+```ruby 
+response = Knodes.customer
+```
 
 Search for a person  
-```response = Knodes.people_search(:user_id=>user_id, :person_id=>"self", :q=>"Joe Schmoe")```
+```ruby 
+response = Knodes.people_search(:user_id=>user_id, :person_id=>"self", :q=>"Joe Schmoe")
+```
 
 Get a person's details  
-```response = Knodes.person(:user_id=>user_id, :person_id=>person_id)```
+```ruby
+response = Knodes.person(:user_id=>user_id, :person_id=>person_id)
+```
 
 Search for a location  
-```response = Knodes.locations_search(:user_id=>user_id, :q=>"New York")```
+```ruby 
+response = Knodes.locations_search(:user_id=>user_id, :q=>"New York")
+```
 
 ## Motivation
 
@@ -57,7 +71,9 @@ Then, use the test harness to get your customer data. From there you can use thi
 Put your sample data into .env (sample file provided)  
 Then, to run the tests, you can use Guard for autotesting, or just vanilla Rspec:
 
-```bundle exec guard```
+```ruby 
+bundle exec guard
+```
 
 ## Contributors
 
