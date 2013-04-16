@@ -13,13 +13,13 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title>Knodes Client Library by matthewrossanderson</title>
+    <title>Knodes Ruby Client Library by matthewrossanderson</title>
   </head>
 
   <body>
     <header>
       <div class="inner">
-        <h1>Knodes Client Library</h1>
+        <h1>Knodes Ruby Client Library</h1>
         <h2>A ruby client library for the Knodes API.</h2>
         <a href="https://github.com/matthewrossanderson/knodes-client" class="button"><small>View project on</small>GitHub</a>
       </div>
@@ -31,14 +31,22 @@
           <h1>Knodes Ruby Client Library</h1>
 
 <p>A ruby client library for the Knodes API<br>
-See full API documentation at <a href="http://developer.kno.des/">http://developer.kno.des/</a></p>
+See full API documentation at <a href="http://developer.knod.es/">http://developer.knod.es/</a></p>
 
 <h2>Usage</h2>
 
 <h3>Installation</h3>
 
-<p>Install the gem:<br><code>gem install knodes-client</code><br>
-or, add it to your Gemfile:<br><code>gem 'knodes-client'</code><br><code>bundle install</code></p>
+<p>Install the gem:  </p>
+
+<div class="highlight"><pre><span class="n">gem</span> <span class="n">install</span> <span class="n">knodes</span><span class="o">-</span><span class="n">client</span>
+</pre></div>
+
+<p>or, add it to your Gemfile:  </p>
+
+<div class="highlight"><pre><span class="n">gem</span> <span class="s1">'knodes-client'</span>    
+<span class="n">bundle</span> <span class="n">install</span>
+</pre></div>
 
 <h3>Configuration</h3>
 
@@ -50,13 +58,25 @@ or, add it to your Gemfile:<br><code>gem 'knodes-client'</code><br><code>bundle 
 
 <h3>Examples</h3>
 
-<p>Get the customer details<br><code>response = Knodes.customer</code></p>
+<p>Get the customer details  </p>
 
-<p>Search for a person<br><code>response = Knodes.people_search(:user_id=&gt;user_id, :person_id=&gt;"self", :q=&gt;"Joe Schmoe")</code></p>
+<div class="highlight"><pre><span class="n">response</span> <span class="o">=</span> <span class="no">Knodes</span><span class="o">.</span><span class="n">customer</span>
+</pre></div>
 
-<p>Get a person's details<br><code>response = Knodes.person(:user_id=&gt;user_id, :person_id=&gt;person_id)</code></p>
+<p>Search for a person  </p>
 
-<p>Search for a location<br><code>response = Knodes.locations_search(:user_id=&gt;user_id, :q=&gt;"New York")</code></p>
+<div class="highlight"><pre><span class="n">response</span> <span class="o">=</span> <span class="no">Knodes</span><span class="o">.</span><span class="n">people_search</span><span class="p">(</span><span class="ss">:user_id</span><span class="o">=&gt;</span><span class="n">user_id</span><span class="p">,</span> <span class="ss">:person_id</span><span class="o">=&gt;</span><span class="s2">"self"</span><span class="p">,</span> <span class="ss">:q</span><span class="o">=&gt;</span><span class="s2">"Joe Schmoe"</span><span class="p">)</span>
+</pre></div>
+
+<p>Get a person's details  </p>
+
+<div class="highlight"><pre><span class="n">response</span> <span class="o">=</span> <span class="no">Knodes</span><span class="o">.</span><span class="n">person</span><span class="p">(</span><span class="ss">:user_id</span><span class="o">=&gt;</span><span class="n">user_id</span><span class="p">,</span> <span class="ss">:person_id</span><span class="o">=&gt;</span><span class="n">person_id</span><span class="p">)</span>
+</pre></div>
+
+<p>Search for a location  </p>
+
+<div class="highlight"><pre><span class="n">response</span> <span class="o">=</span> <span class="no">Knodes</span><span class="o">.</span><span class="n">locations_search</span><span class="p">(</span><span class="ss">:user_id</span><span class="o">=&gt;</span><span class="n">user_id</span><span class="p">,</span> <span class="ss">:q</span><span class="o">=&gt;</span><span class="s2">"New York"</span><span class="p">)</span>
+</pre></div>
 
 <h2>Motivation</h2>
 
@@ -78,7 +98,8 @@ Sign up for an account here:
 Put your sample data into .env (sample file provided)<br>
 Then, to run the tests, you can use Guard for autotesting, or just vanilla Rspec:</p>
 
-<p><code>bundle exec guard</code></p>
+<div class="highlight"><pre><span class="n">bundle</span> <span class="nb">exec</span> <span class="n">guard</span>
+</pre></div>
 
 <h2>Contributors</h2>
 
